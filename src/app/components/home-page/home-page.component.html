@@ -1,0 +1,63 @@
+
+<div class="container cont" style="margin-top: 35px;  background-color:rgb(220, 230, 230);">
+  <div class="row " >
+    <div class="col-md-4"  > <h1 style="margin-top: 15px; "
+      >Cliente em potencial</h1>
+
+      <div  cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="primary"
+      
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list  "
+      (cdkDropListDropped)="onDrop(1,$event)"
+      >
+          <div cdkDrag  class="example-box"
+                *ngFor="let leads of primary" style="height: 40px; ">
+        {{leads.nome}}
+          </div>
+
+      </div>
+    </div>
+    <div class="col-md-4"> <h1 style="margin-top: 15px; ">Dados Confirmados</h1>
+      <div cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="segundo"
+      [cdkDropListConnectedTo]="[treeList]"
+      class="example-list"
+      (cdkDropListDropped)="onDrop(2,$event)">
+      <div cdkDrag class="example-box" *ngFor="let leads of segundo" >
+             {{leads.nome}}
+      </div>
+
+      </div>
+    </div>
+    <div class="col-md-4"><h1 style="margin-top: 15px; "> Reunião Agendada</h1>
+      <div cdkDropList
+      #treeList="cdkDropList"
+      [cdkDropListData]="terceiro"
+      class="example-list"
+      (cdkDropListDropped)="onDrop(3,$event)">
+      <div cdkDrag class="example-box"
+           *ngFor="let leads of terceiro" >
+
+           {{leads.nome}}
+
+          </div>
+          
+    </div>
+    
+  </div>
+ 
+  <button type="button"  class="btn btn-primary btn-xl" style="
+  margin-left: 530px; margin-top: 60px;" [routerLink]="['/registrolead']"  >Nova Lead(+)</button>
+
+</div>
+
+
+
+
+
+
+
+

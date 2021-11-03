@@ -1,0 +1,53 @@
+<div class="container" style="margin-top: 110px;">
+  <div class="col-md-8 col-md-offset-2  " >
+   <div class="row brd con"  style="background-color: rgb(204, 212, 212);">
+      <div class="col-md-12">
+        <h1 >Registro de Leads</h1>
+<form [formGroup]="formLeads"> 
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="nome"
+      formControlName="nome" required>
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="text" class="form-control" id="telefone" placeholder="()9999-9999"
+        formControlName="telefone" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" placeholder="nome@exemplo.com"
+        formControlName="email" required>
+      </div>
+     
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        Todos
+        <label class="form-check-label" for="defaultCheck1 " style="margin-left: 4px;">
+        
+        </label>
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" style="margin-left: 15px;">
+        Produto digital
+        <label class="form-check-label" for="defaultCheck1 " style="margin-left: 4px;">
+        </label>
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        Analytcs
+        <label class="form-check-label" for="defaultCheck1 " style="margin-left: 15px;">
+        </label>
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        BPM
+        <label class="form-check-label" for="defaultCheck1 " style="margin-left: 15px;">
+        </label>
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        RPA
+        <label class="form-check-label" for="defaultCheck1 " style="margin-left: 15px;">
+        </label>
+      </div>
+  </form>
+  <span *ngIf="formLeads.controls.nome.errors"style="color: tomato;">Preencha todos os campos</span>
+
+  <button type="button"  class="btn btn-primary btn-xl" style="
+           margin-left: 270px; margin-bottom: 25px; " (click)= "test()" >Cadastrar</button>
+</div>
+</div>
+</div>

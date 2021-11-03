@@ -1,0 +1,32 @@
+<div class="container" style="margin-top: 110px;">
+    <div class="col-md-8 col-md-offset-2  " >
+     <div class="row brd"  style="background-color: rgb(204, 212, 212);">
+        <div class="col-md-6 lgn rig" ></div>
+        <div class="col-md-6">
+
+          <form [formGroup]="formLogin">
+            <div class="formGroup">
+              <label for="username"  style="margin-top: 100px;" id="username" >Usuário </label>
+              <input type="username" class="form-control" placeholder="Nome de Usuário" 
+              formControlName="nome" required>
+            </div>
+
+            <div class="formGroup" style="margin-top: 10 px;">
+            <label for="inputPassword" style="margin-top: 15px;" >Password </label>
+            <input type="password" class="form-control" placeholder="Password"
+            formControlName="senha" required>
+            <span  *ngIf="formLogin.controls.nome.errors" style="color: tomato; margin-left: 35px; ">
+              Entre com usuário e senha ou cadastre-se
+           </span>
+          </div>
+          <button type="button"  class="btn btn-primary btn-xl" style="margin-top: 30px;
+           margin-left: 70px;" (click)= "valid()"  >Entrar</button>
+           
+          </form>
+          
+            <a class="nav-link" href="#" style="margin-top: 50px; margin-left: 135px;" [routerLink]="['/registrar']" >Cadastre-se</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
